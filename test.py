@@ -1,5 +1,6 @@
 import time
 from collections import deque
+import sys
 start_time = time.time()
 
 
@@ -35,3 +36,7 @@ bfs(graph, 1, visited)
 
 end_time = time.time()
 print("time : ", end_time - start_time)
+
+
+
+data = sys.stdin.readline().rstrip()
