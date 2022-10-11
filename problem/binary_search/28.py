@@ -1,21 +1,20 @@
 import sys
 import bisect
 
-n, c = map(int, sys.stdin.readline().rstrip().split())
-house = []
-for _ in range(n):
-    house.append(int(sys.stdin.readline().rstrip()))
-    
-house.sort()
-first = house[0]
-end = house[-1]
+n = int(sys.stdin.readline().rstrip())
+array = list(map(int,sys.stdin.readline().rstrip().split()))
 
-step = (first + end) // (c - 1)
+first = 0
+end = n - 1
 
-result = 0
-for i in range(step, end, step):
-    router = bisect.bisect_left(house,i)
-    
-    result = min(result,house[router] - first)
-    house
-    
+while first <= end:
+    mid = (first + end) // 2
+    if array[mid] == mid:
+        print(mid)
+        exit(0)
+    elif array[mid] > mid:
+        end = mid - 1
+    elif array[mid] < mid:
+        first = mid + 1
+
+print(-1)
